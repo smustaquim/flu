@@ -26,6 +26,7 @@ filepath_subs_template = "C:/Users/SalMustaquim/Dropbox/Influenza Forecasting 20
 
 df_sub = pd.read_csv(filepath_subs_template)
 
+#set initial temp value for testing purposes. Will be overwritten during run-time
 df_sub['Value']=8888
 
 #Update file path as needed

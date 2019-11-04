@@ -140,9 +140,9 @@ df_sims_plus_data['next_1_wk_label']=pd.cut(df_sims_plus_data['peak_week_intensi
 
 
 # ********************** Sims Plus creation successful ********************
+print ("SUCCESS! Completed creation of Sims Plus ...")
 
-print ("Completed creation of Sims Plus ...")
-
+# ******************** Now write Sims Plus to output file *****************
 filepath_sims_plus = "C:/Users/SalMustaquim/Desktop/dissertation/sims_plus_160.csv"
 print ("Writing updated Sims Plus data to  " + filepath_sims_plus)
 df_sims_plus_data.to_csv(filepath_sims_plus) 
@@ -152,6 +152,9 @@ print ("Completed writing Sims Plus data.")
 
 # *************************************************************************
 # ************************** CREATE SUB FILE (START) **********************
+# *************************************************************************
+# This action will take place in create_subs.py file
+# *************************************************************************
 # *************************************************************************
 
 
