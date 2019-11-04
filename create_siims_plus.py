@@ -6,7 +6,8 @@ dir_sims_corr = "C:/Users/SalMustaquim/Dropbox/Influenza Forecasting 2018-19/for
 
 cur_region = 0
 
-#get cur_week and is_53_week_year from lookup table
+#get dataset_week and 53_week_year from lookup table - *NOT DONE YET*
+#hardcoding following variables to complete one test run
 cur_week = 160
 year=2013
 week=43
@@ -19,8 +20,8 @@ def get_onset_week(fname):
     a=1
     
 print ("We are in 2013-14, week 43. This season has 52 weeks.")
-
-# *** START LOOP TO LOOP THROUGH REGIONS HERE ***
+ 
+# *** START LOOP TO LOOP THROUGH REGIONS HERE - NOT DONE YET ***
 
 #Construct filename from cur_week and cur_region
 filename_sims_corr = str(cur_week) + "_region0" + str(cur_region) + ".csv"
@@ -153,22 +154,4 @@ print ("Completed writing Sims Plus data.")
 # ************************** CREATE SUB FILE (START) **********************
 # *************************************************************************
 
-df_sub = pd.DataFrame(columns=['Location','Target','Type','Unit','Bin_start_incl','Bin_end_notincl','Value'])
-
-
-
-
-filename_sub = "EW" + str(cur_week) + ".csv"
-filepath_sub = "C:/Users/SalMustaquim/Desktop/dissertation/" + filename_sub
-
-df_sub.to_csv(filepath_sub, index=False) 
-
-
-
-print ("\n\n\n\n\n\n")
-
-
-# ********************* Find onset week probabilities *********************
-# Run algorithm
-print ("- onset_week probabilities calculated [to be done]...")
 

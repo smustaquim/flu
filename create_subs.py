@@ -6,7 +6,8 @@ num_regions = 11
 num_simulations = 1000
 num_bins = 131
 
-#get dataset_week and 53_week_year from lookup table
+#get dataset_week and 53_week_year from lookup table - *NOT DONE YET*
+#hardcoding following variables to complete one test run
 dataset_week = 160
 year=2013
 week=43
@@ -19,6 +20,7 @@ group_names=['0.0', '0.1', '0.2', '0.3', '0.4', '0.5', '0.6', '0.7', '0.8', '0.9
 
 print ("Current season is 2013. This season has 52 weeks.")
 
+#Update file path as needed
 filename_subs_template = "Long_Flu_Submission_Template_1718.csv"
 filepath_subs_template = "C:/Users/SalMustaquim/Dropbox/Influenza Forecasting 2018-19/for applying model to past seasons/Model/" + filename_subs_template
 
@@ -26,6 +28,7 @@ df_sub = pd.read_csv(filepath_subs_template)
 
 df_sub['Value']=8888
 
+#Update file path as needed
 filename_sims_plus = "sims_plus_160.csv"
 filepath_sims_plus = "C:/Users/SalMustaquim/Desktop/dissertation/" + filename_sims_plus
 
@@ -95,14 +98,14 @@ for cur_region in range(num_regions):
 #*********************************************
 #create new df with counts for each bin
          
-         # begin hack - for some reason, need to read in csv again and update pwi_label again - this keeps zero occurrences
+# begin hack - for some reason, need to read in csv again and update pwi_label again - this keeps zero occurrences
 df_for_bins = pd.read_csv("C:/Users/SalMustaquim/Desktop/dissertation/sims_plus_160.csv")
 df_for_bins=df_for_bins[0:-1]
 
 df_for_bins['pwi_label']=pd.cut(df_for_bins['peak_week_intensity'], bins, labels=group_names)
 #create new df with counts for each bin
 bins_hack=pd.value_counts(df_for_bins['pwi_label'])/1000
-         # end hack
+# end hack
 
 #first create a list (series) of bins
 # bins=pd.value_counts(df_sims_plus['pwi_label'])/1000
